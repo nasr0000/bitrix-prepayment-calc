@@ -33,12 +33,13 @@ app.post("/", async (req, res) => {
     const webhook = "https://itnasr.bitrix24.kz/rest/1/bucjza1li2wbp6lr/";
 
     // Обновление счёта в Bitrix24
-    await axios.post(`${webhook}crm.invoice.update`, {
+    await axios.post(`${webhook}crm.deal.update`, {
   id: invoiceId,
   fields: {
     UF_CRM_1752085331: rest
   }
 });
+
 
 
 
