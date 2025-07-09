@@ -34,11 +34,13 @@ app.post("/", async (req, res) => {
 
     // Обновление счёта в Bitrix24
     await axios.post(`${webhook}crm.invoice.update`, {
-      ID: invoiceId,
-      FIELDS: {
-        UF_CRM_1752085331: rest
-      }
-    });
+  id: invoiceId,
+  fields: {
+    UF_CRM_1752085331: rest
+  }
+});
+
+
 
     console.log(`✅ Обновлён счёт ${invoiceId}: сумма = ${total}, предоплата = ${prepayment}, остаток = ${rest}`);
     res.status(200).send("OK");
