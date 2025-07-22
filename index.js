@@ -56,3 +56,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Сервер запущен на порту ${PORT}`);
 });
+
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+});
